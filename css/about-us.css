@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: rgb(4, 0, 15);
+}
+h1 {
+  color: white;
+  font-family: "Noto-serif", serif;
+  font-size: 80px;
+}
+h4 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+.bodygrid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas:
+    "section1 section1 "
+    "section2a section2b";
+}
+.section1 {
+  grid-area: section1;
+  display: flex;
+  margin-top: 5%;
+  padding: 0 5%;
+}
+.headertxt {
+  margin-left: 30%;
+  text-align: center;
+  margin-top: 5%;
+}
+.backic {
+  width: 25px;
+}
+.section2a {
+  grid-area: section2a;
+  padding: 10% 10%;
+  margin-top: 100px;
+}
+.section2b {
+  grid-area: section2b;
+  padding: 0 20%;
+  margin-top: 100px;
+}
+.abimg {
+  width: 100%;
+}
+
+@media (max-width: 950px) {
+  body {
+    background-size: contain;
+
+    background-color: black;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  h4 {
+    font-size: 12px;
+  }
+  .bodygrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+      "section1 section1 "
+      " section2b";
+  }
+  .headertxt {
+    margin-left: 20%;
+  }
+  .section2a {
+    display: none;
+  }
+  .section2b {
+    padding: 0 5%;
+    margin-top: 0;
+  }
+}

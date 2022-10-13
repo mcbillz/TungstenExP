@@ -1,0 +1,215 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+form {
+  text-align: center;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #3b0931;
+}
+label {
+  color: white;
+}
+h1 {
+  font-size: 40px;
+  color: aliceblue;
+}
+h2 {
+  font-size: 25px;
+  font-weight: 100;
+  color: aliceblue;
+}
+label {
+  font-size: 15px;
+}
+
+input {
+  height: 30px;
+  width: 60%;
+  margin: 2% 0;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.succalrt {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: #d1e7dd;
+  top: 50px;
+  left: 0;
+  margin: 0 5%;
+  width: 90%;
+  height: 80px;
+  z-index: 101;
+  border-radius: 5px;
+}
+.failalrt {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7d1d6;
+  top: 50px;
+  left: 0;
+  margin: 0 5%;
+  width: 90%;
+  height: 80px;
+  z-index: 101;
+  border-radius: 5px;
+}
+.succalrt p,
+.failalrt p {
+  font-size: 12px;
+}
+.alrtic {
+  width: 25px;
+  margin-right: 20px;
+}
+.alrtcl {
+  width: 10px;
+  cursor: pointer;
+}
+.btnalrtcl {
+  background-color: transparent;
+  border-style: none;
+  margin-left: 30px;
+  position: relative;
+  bottom: 20px;
+}
+.backic {
+  width: 2%;
+  margin: 1.5%;
+  margin-top: 0;
+}
+.bodydiv {
+  padding: 0 15%;
+}
+.balance {
+  width: 50%;
+  text-align: center;
+  background-color: #320729;
+  padding: 5% 0;
+  border-radius: 40px;
+  border-style: double;
+  border-color: rgb(255, 238, 0);
+  margin: 0 25%;
+}
+.coinselect {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0;
+  background-color: transparent;
+}
+.coinic {
+  width: 30px;
+  padding: 0 20px;
+}
+.pickbtc,
+.pickltc,
+.picketh,
+.pickbnb {
+  width: 80px;
+  height: 70px;
+  margin: 0 10px;
+  border-radius: 10px;
+  border-style: none;
+}
+.pickbtc {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: gray;
+  background-color: transparent;
+}
+.picketh {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: gray;
+  background-color: transparent;
+}
+.pickltc {
+  background-color: rgb(189, 189, 189);
+}
+.pickbnb {
+  background-color: #000000;
+}
+.activebtn {
+  width: 90px;
+  height: 80px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: rgb(255, 238, 0);
+}
+.bfig {
+  justify-content: center;
+}
+
+.bfig {
+  display: flex;
+  margin-top: 2%;
+}
+#confirmbtn {
+  color: white;
+  border-style: none;
+  background-color: blueviolet;
+  height: 35px;
+  width: 50%;
+  border-radius: 20px;
+  font-size: 25px;
+  margin-top: 20px;
+}
+#confirmbtn:hover {
+  color: black;
+  background-color: yellow;
+  height: 37px;
+  width: 55%;
+  font-size: 27px;
+}
+@media (max-width: 950px) {
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 10px;
+  }
+  input {
+    width: 70%;
+  }
+
+  .backic {
+    width: 3%;
+    margin: 10%;
+    margin-top: 20%;
+  }
+  #confirmbtn {
+    width: 50%;
+    border-radius: 20px;
+    font-size: 15px;
+  }
+  #confirmbtn:hover {
+    color: black;
+    background-color: yellow;
+    height: 37px;
+    width: 55%;
+    font-size: 17px;
+  }
+  .coinic {
+    width: 15px;
+    padding: 0 10px;
+  }
+  .pickbtc,
+  .pickltc,
+  .picketh,
+  .pickbnb {
+    height: 50px;
+    margin: 0 5px;
+  }
+  .coinselect {
+    margin: 10% 0;
+  }
+  .balance {
+    border-radius: 20px;
+  }
+}

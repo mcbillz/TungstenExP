@@ -1,0 +1,644 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #3b0931;
+  padding-bottom: 20px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+#google_translate_element {
+  margin-top: 20vh;
+}
+.goog-te-combo {
+  margin: 5px 0 20px 0;
+  width: 50%;
+  height: 40px;
+  box-shadow: none;
+  cursor: pointer;
+  background-color: #3b0931;
+  border: 1px solid #bc4aa5;
+  border-radius: 5px;
+  outline: none;
+  color: gray;
+  font-size: 1rem;
+  padding: 5px 15px;
+  transition: 0.5s;
+}
+.succalrt {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: #d1e7dd;
+  top: 50px;
+  left: 0;
+  margin: 0 5%;
+  width: 90%;
+  height: 80px;
+  z-index: 101;
+  border-radius: 5px;
+}
+.failalrt {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7d1d6;
+  top: 50px;
+  left: 0;
+  margin: 0 5%;
+  width: 90%;
+  height: 80px;
+  z-index: 101;
+  border-radius: 5px;
+}
+.succalrt p,
+.failalrt p {
+  font-size: 12px;
+}
+.alrtic {
+  width: 25px;
+  margin-right: 20px;
+}
+.alrtcl {
+  width: 10px;
+  cursor: pointer;
+}
+.btnalrtcl {
+  background-color: transparent;
+  border-style: none;
+  margin-left: 30px;
+  position: relative;
+  bottom: 20px;
+}
+/* navbar */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  grid-area: nav;
+  background-color: #3b0931;
+  padding: 16px 10px;
+  box-shadow: 10px 0 30px #100101;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navlogo {
+  width: 50px;
+}
+.hamburger {
+  display: block;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: #1c0417;
+  border-radius: 6px;
+  z-index: 1;
+  transform-origin: 0 0;
+  transition: 0.4s;
+}
+.hamburger:hover span:nth-child(2) {
+  transform: translateX(10px);
+  background-color: yellow;
+}
+
+.hamburger.is-active span:nth-child(1) {
+  transform: translate(0px, -2px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(15px);
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translate(-3px, 3px) rotate(-45deg);
+}
+.hamburger.is-active:hover span {
+  background-color: yellow;
+}
+.nav-menu {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: flex-end;
+  margin: 0 -16px;
+  left: -100%;
+}
+.nav-menu a {
+  color: white;
+  margin: 0 16px;
+  font-weight: 100;
+  text-decoration: none;
+  transition: 0.4s;
+  padding: 16px 16px;
+  border-radius: 99px;
+}
+.nav-menu a.is-active,
+.nav-menu a:hover {
+  background-color: yellow;
+  color: black;
+}
+.navmenuic {
+  display: none;
+  position: relative;
+  top: 5px;
+  width: 35px;
+}
+.nav-menu #nvic.is-active,
+.nav-menu #nvic:hover {
+  background-color: #3b0931;
+}
+.reward-icon {
+  width: 25px;
+}
+
+.user-icon {
+  width: 25px;
+}
+
+.bell-icon {
+  width: 25px;
+}
+
+.sub-menu-1 {
+  display: none;
+}
+.dropdown:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background-color: #10010149;
+  margin-top: 10px;
+}
+.fdbtn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin: 0 16px;
+  font-size: 16px;
+  font-weight: 100;
+  text-decoration: none;
+  transition: 0.4s;
+  padding: 16px 16px;
+  border-radius: 99px;
+}
+#nvic {
+  background-color: transparent;
+  border: none;
+  margin: 0 15px;
+}
+.fdbtn:hover {
+  background-color: yellow;
+  color: black;
+}
+.sub-menu-1 ul {
+  list-style: none;
+}
+.sub-menu-2 {
+  display: none;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 5px;
+  border-width: 0.5px;
+  padding: 0 15px;
+  height: 200px;
+}
+.sub-menu-2 ul {
+  list-style: none;
+  margin-top: 15px;
+}
+.sub-menu-2 ul li {
+  color: white;
+}
+.dropdown:hover .sub-menu-2 {
+  display: block;
+  position: absolute;
+  background-color: #10010149;
+  margin-top: 10px;
+  right: 110px;
+  width: 250px;
+}
+.sub-menu-3 {
+  display: none;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 5px;
+  border-width: 0.5px;
+  padding: 0 15px;
+  height: 200px;
+}
+.sub-menu-3 ul {
+  list-style: none;
+  margin-top: 15px;
+}
+.sub-menu-3 ul li {
+  color: white;
+}
+.dropdown:hover .sub-menu-3 {
+  display: block;
+  position: absolute;
+  background-color: #10010149;
+  margin-top: 5px;
+  right: 0px;
+  width: 250px;
+}
+
+.sub-menu-4 {
+  display: none;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 5px;
+  border-width: 0.5px;
+  padding: 0 0px;
+  height: 215px;
+}
+.sub-menu-4 ul {
+  list-style: none;
+  margin-top: 15px;
+}
+.sub-menu-4 ul li {
+  color: white;
+}
+.dropdown:hover .sub-menu-4 {
+  display: block;
+  position: absolute;
+  background-color: #10010149;
+  margin-top: 5px;
+  right: 0px;
+  width: 200px;
+}
+.menu-4d1 {
+  display: flex;
+  align-items: center;
+}
+.transicon {
+  width: 20px;
+  height: 20px;
+}
+.menu-4d2 {
+  display: flex;
+  align-items: center;
+}
+.logouticon {
+  width: 20px;
+  height: 20px;
+  margin-left: 25px;
+}
+.menu-4d3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.menu-4d4 {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+.sic {
+  width: 20px;
+  height: 20px;
+  padding: 0 5px;
+}
+#sica,
+#sica:hover {
+  margin: 0;
+  padding: 0;
+}
+#sica.is-active,
+#sica:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.bodygrid {
+  padding: 0 5%;
+  margin-top: 15%;
+  margin-bottom: 50px;
+  display: grid;
+  grid-column-gap: 30px;
+  grid-row-gap: 50px;
+  grid-template-areas:
+    "nft1 nft2 nft3 nft4"
+    "nft5 nft6 nft7 nft8"
+    "nft9 nft10 nft11 nft12"
+    "nft13 nft14 nft15 nft16"
+    "nft17 nft18 nft19 nft20";
+}
+.nft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
+  border-radius: 20px;
+  background-color: #431139;
+  box-shadow: 10px 10px 10px -5px #310929c7;
+  padding: 2%;
+}
+.nftimg {
+  margin: 3% 0% 3% 0%;
+  width: 80%;
+  filter: opacity(70%);
+}
+.nftimg:hover {
+  filter: opacity(100%);
+}
+.nfttxt {
+  display: flex;
+  color: white;
+  width: 80%;
+}
+.nfttxti {
+  margin-right: 40%;
+}
+.nftspn2 {
+  color: greenyellow;
+  font-size: 1rem;
+}
+.nftic {
+  margin: 0;
+  width: 50px;
+  height: 50px;
+}
+.nftbtn {
+  width: ;
+  height: 50px;
+  background-color: transparent;
+  border-style: none;
+}
+.nfth4 {
+  font-size: 12px;
+  font-weight: 600;
+  width: ;
+}
+.nfth2 {
+  text-align: ;
+  font-weight: 100;
+}
+
+/* buy div */
+
+.buy {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.34);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+.overlayimg {
+  width: 200px;
+}
+.buy-overlay {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #3b0931;
+  width: 300px;
+  height: fit-content;
+  padding: 20px 0 50px 0;
+  border-radius: 10px;
+}
+.cancelbtn {
+  margin-left: 80%;
+  width: 20px;
+  margin-bottom: 30px;
+}
+.rar {
+  position: relative;
+  margin: 10px 0;
+}
+
+.buy-label {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  pointer-events: none;
+  font-size: 1rem;
+  color: gray;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.buy-amount:valid ~ span,
+.buy-amount:focus ~ span {
+  color: #e165c8;
+  transform: translateX(10px) translateY(-30px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #3b0931;
+  border-left: 1px solid #e165c8;
+  border-right: 1px solid #e165c8;
+  letter-spacing: 0.3em;
+}
+.buy-amount:valid,
+.buy-amount:focus {
+  border: 1px solid #e165c8;
+}
+.rar:nth-child(2) .buy-amount:valid ~ span,
+.rar:nth-child(2) .buy-amount:focus ~ span {
+  background: #e165c8;
+  color: #3b0931;
+  border-radius: 2px;
+}
+.nftname {
+  margin: 20px 0 5px 0;
+  width: 100%;
+  height: 40px;
+  box-shadow: none;
+  cursor: pointer;
+  background-color: #3b0931;
+  border: 1px solid #bc4aa5;
+  border-radius: 5px;
+  outline: none;
+  color: gray;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: 0.5s;
+  appearance: none;
+}
+.nftprice {
+  margin: 5px 0 20px 0;
+  width: 100%;
+  height: 40px;
+  box-shadow: none;
+  cursor: pointer;
+  background-color: #3b0931;
+  border: 1px solid #bc4aa5;
+  border-radius: 5px;
+  outline: none;
+  color: gray;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: 0.5s;
+  appearance: none;
+}
+.buy-btn {
+  height: 30px;
+  width: 80%;
+  border-radius: 20px;
+  background-color: yellow;
+  border-style: none;
+}
+.buy-btn:hover {
+  background-color: purple;
+  color: white;
+}
+
+@media (min-width: 950px) {
+  .hamburger {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+  }
+}
+@media (max-width: 950px) {
+  .nav-menu {
+    top: 85px;
+    position: fixed;
+    flex-direction: column;
+    background-color: #290522;
+    text-align: center;
+    transition: 0.3s;
+    width: 30%;
+    margin: 0;
+  }
+  .navmenuic {
+    display: block;
+    position: relative;
+    top: 5px;
+    width: 35px;
+    margin-bottom: 10px;
+  }
+  .nav-menu a {
+    font-size: small;
+    margin: 0px 0;
+    border-radius: 25px;
+    padding: 12px 12px;
+  }
+  .nav-menu.active {
+    left: 0;
+    padding-bottom: 150px;
+  }
+  #nvic {
+    display: none;
+  }
+  .fdbtn {
+    font-size: small;
+    margin: 0px 0;
+    border-radius: 25px;
+    padding: 12px 12px;
+    width: 100%;
+  }
+  .dropdown:hover .sub-menu-1 {
+    display: block;
+    position: relative;
+  }
+}
+@media (min-width: 780px) and (max-width: 1200px) {
+  .bodygrid {
+    padding: 0 5%;
+    margin-top: 15%;
+    margin-bottom: 50px;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    grid-template-areas:
+      "nft1 nft2"
+      "nft3 nft4"
+      "nft5 nft6"
+      "nft7 nft8"
+      "nft9 nft10"
+      "nft11 nft12"
+      "nft13 nft14"
+      "nft15 nft16"
+      "nft17 nft18 "
+      "nft19 nft20";
+  }
+
+  .nftbtn {
+    margin-left: 0;
+  }
+}
+@media (max-width: 780px) {
+  .bodygrid {
+    margin: 0 5%;
+    margin-top: 30%;
+    margin-bottom: 50px;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    grid-template-areas:
+      "nft1"
+      "nft2"
+      "nft3"
+      "nft4"
+      "nft5"
+      "nft6"
+      "nft7"
+      "nft8"
+      "nft9"
+      "nft10"
+      "nft11"
+      "nft12"
+      "nft13"
+      "nft14"
+      "nft15"
+      "nft16"
+      "nft17"
+      "nft18 "
+      "nft19"
+      "nft20";
+  }
+
+  .nftbtn {
+    margin-left: 0;
+  }
+
+  .nfttxt {
+    display: flex;
+    color: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .succalrt p,
+  .failalrt p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 500px) {
+  .succalrt p,
+  .failalrt p {
+    font-size: 6px;
+  }
+}

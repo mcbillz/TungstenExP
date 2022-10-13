@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+html {
+  width: 100%;
+}
+body {
+  background: black;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: rgb(236, 236, 236);
+}
+input {
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 0.5px;
+  height: 25px;
+  background-color: transparent;
+  width: 250px;
+  color: rgb(236, 236, 236);
+  padding: 0 10px;
+}
+.input {
+  padding: 10px 0px;
+}
+p {
+  font-size: smaller;
+  text-align: left;
+  font-weight: lighter;
+}
+form {
+  width: fit-content;
+  height: 320px;
+}
+.down {
+  padding-top: 10px;
+}
+h2 {
+  padding-bottom: 10px;
+  font-size: xx-large;
+}
+h6 {
+  font-size: small;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+}
+img {
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 0.7px;
+}
+
+.check {
+  display: flex;
+  align-self: right;
+  width: 12px;
+  border-color: gray;
+  color: black;
+}
+.container {
+  background-image: url(TUNGreg.png);
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(182, 182, 182);
+}
+.top {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.centre {
+  width: 280px;
+  border: 0.1rem solid rgb(72, 71, 71);
+  border-radius: 100px;
+  padding: 40px;
+  height: 525px;
+  grid-column: 2 / span 1;
+  padding-bottom: 5px;
+  padding-top: 0%;
+}
+.centre h3 {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.centre h5 {
+  padding-bottom: 5px;
+}
+.centre h4 {
+  text-align: left;
+}
+.btn {
+  color: rgb(236, 236, 236);
+  background-color: blueviolet;
+  padding: 0px 50px;
+  border-radius: 20px;
+  width: fit-content;
+  font-size: medium;
+  border: 0;
+  margin: 10px 0;
+  height: 35px;
+  margin-top: 50px;
+}
+.btn:hover {
+  color: black;
+  background-color: yellow;
+  font-size: larger;
+  transition: all ease-in 0.1s;
+}
+img:hover {
+  background-color: white;
+  border-radius: 20px;
+}
+.toggle {
+  height: 22px;
+  width: 45px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: rgb(255, 255, 255);
+  display: flex;
+  position: absolute;
+  margin-top: 5px;
+  align-items: center;
+  padding: 0 2px;
+}
+.togglecir {
+  background-color: rgb(197, 189, 189);
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+}
+.click1 {
+  background-color: yellow;
+  justify-content: flex-end;
+  border-width: 2px;
+}
+.click2 {
+  background-color: rgb(0, 0, 0);
+}
+@media (max-width: 900px) {
+  body {
+    margin-top: 100px;
+  }
+  h2 {
+    padding-bottom: 10px;
+    font-size: x-large;
+  }
+
+  h6 {
+    font-size: 10px;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 100;
+  }
+  .input {
+    padding: 5px 0px;
+  }
+  .top {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .container {
+    background-image: url(subg.png);
+    background-position: center;
+  }
+
+  .centre {
+    height: 520px;
+  }
+  .centre h3 {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  .centre h5 {
+    padding-bottom: 5px;
+  }
+}
