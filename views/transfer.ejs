@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUNGSTEN Exchange</title>
+    <link rel="stylesheet" href="css/transfer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="backbtn">
+      <a href="/dashboard">
+        <img class="backic" src="img2/backic.png" alt="" />
+      </a>
+    </div>
+    <div class="bodydiv">
+      <div class="balance">
+        <h2>BALANCE</h2>
+        <div class="bfig">
+          <h1 class="bdig">$</h1>
+          <h1 class="bdigm"><%= balance %></h1>
+        </div>
+      </div>
+
+      <div class="">
+        <form style="margin-top: 10%" action="" method="post">
+          <label for="plan">RECIPIENT EMAIL</label>
+          <br />
+          <input type="email" name="recipientemail" />
+          <br />
+          <label for="amount">AMOUNT(USD)</label><br />
+          <input type="number" name="transferamount" /><br />
+          <input type="hidden" name="userEmail" value="<%= userEmail %>" />
+          <input id="confirmbtn" type="submit" value="CONFIRM" />
+        </form>
+      </div>
+    </div>
+    <div style="display: <%=sstyle%>" class="succalrt" role="alert">
+      <img class="alrtic" src="img2/checked.png" alt="" />
+      <p>Your request has been recieved and would be reviewed shortly</p>
+      <button class="btnalrtcl">
+        <img class="alrtcl" src="img2/close.png" alt="" />
+      </button>
+    </div>
+
+    <div style="display: <%=fstyle%>" class="failalrt" role="alert">
+      <img class="alrtic" src="img2/warning.png" alt="" />
+      <p>
+        Sorry there was a problem with your request please review it and try
+        again
+      </p>
+      <button class="btnalrtcl">
+        <img class="alrtcl" src="img2/close.png" alt="" />
+      </button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/transfer.js"></script>
+  </body>
+</html>

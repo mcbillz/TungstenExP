@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUNGSTEN Exchange</title>
+    <link rel="stylesheet" href="css/stake.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="succalrt" role="alert">
+      <img class="alrtic" src="img2/checked.png" alt="" />
+      <p>Your request has been recieved and would be reviewed shortly</p>
+      <button class="btnalrtcl">
+        <img class="alrtcl" src="img2/close.png" alt="" />
+      </button>
+    </div>
+    <div class="backbtn">
+      <a href="/dashboard">
+        <img class="backic" src="img2/backic.png" alt="" />
+      </a>
+    </div>
+    <div class="bodydiv">
+      <div class="balance">
+        <h2>BALANCE</h2>
+        <div class="bfig">
+          <h1 class="bdig">$</h1>
+          <h1 class="bdigm" id="h4s1"><%= balance %></h1>
+        </div>
+      </div>
+      <div class="coinselect">
+        <button class="pbtn pickbtc">
+          <img class="coinic" src="img2/btcic .png" alt="" />
+        </button>
+        <button class="pbtn picketh">
+          <img class="coinic" src="img2/ethic.png" alt="" />
+        </button>
+        <button class="pbtn pickltc">
+          <img class="coinic" src="img2/ltcic.png" alt="" />
+        </button>
+        <button class="pbtn pickbnb">
+          <img class="coinic" src="img2/bnbic.png" alt="" />
+        </button>
+      </div>
+      <div class="">
+        <form action="/stake" method="post">
+          <label for="plan">PLAN</label> <br />
+          <select name="splan" id="splan">
+            <option value="growth plan">GROWTH PLAN</option>
+            <option value="model plan">MODEL PLAN</option>
+            <option value="pro plan">PRO PLAN</option></select
+          ><br />
+          <label for="amount">AMOUNT(USD)</label><br />
+          <input type="number" name="stakeamount" /><br />
+          <input type="hidden" name="userEmail" value="<%= userEmail %>" />
+          <input id="confirmbtn" type="submit" value="CONFIRM" />
+        </form>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/stake.js"></script>
+  </body>
+</html>

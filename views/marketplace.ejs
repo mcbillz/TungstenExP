@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUNGSTEN Exchange</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/marketplace.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <img class="navlogo" src="img2/TUNGSTEN 11.png" alt="" />
+        <div class="nav-menu">
+          <a href="/dashboard">
+            <img class="navmenuic" src="img2/dashboardicon.png" alt="" />
+            DASHBOARD</a
+          >
+          <a href="/marketplace" class="is-active">
+            <img class="navmenuic" src="img2/nfticonpng.png" alt="" />NFT
+            MARKET</a
+          >
+          <div class="dropdown">
+            <button class="fdbtn">
+              <img class="navmenuic" src="img2/fundingicon.png" alt="" />FUNDING
+            </button>
+            <div class="sub-menu-1">
+              <ul>
+                <li style="margin: 0px 0">
+                  <a href="/buyCrypto">Deposit</a>
+                </li>
+                <li style="margin: 15px 0">
+                  <a href="/withhdrawal">Withdrawal</a>
+                </li>
+                <li style="margin: 15px 0">
+                  <a href="/transfer">Transfer</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="/buyCrypto"
+            ><img class="navmenuic" src="img2/buycryptoicon.png" alt="" />BUY
+            CRYPTO</a
+          >
+          <div class="dropdown">
+            <button id="nvic" style="padding: 8px 5px" href="">
+              <img class="reward-icon" src="img2/reward icon.png" alt="" />
+            </button>
+            <div class="sub-menu-2"></div>
+          </div>
+
+          <div class="dropdown">
+            <button id="nvic" style="padding: 8px 5px" href="">
+              <img class="bell-icon" src="img2/bell icon.png" alt="" />
+            </button>
+            <div class="sub-menu-3"></div>
+          </div>
+
+          <div class="dropdown">
+            <button
+              id="nvic"
+              style="
+                margin-right: 10px;
+                padding: 8px 20px;
+                border-style: solid;
+                border-radius: 30px;
+                border-color: gray;
+              "
+              href=""
+            >
+              <img class="user-icon" src="img2/user icon.png" alt="" />
+            </button>
+            <div class="sub-menu-4">
+              <div class="menu-4d1">
+                <a href="#google_translate_element">Language</a>
+                <img class="transicon" src="img2/translation.png" alt="" />
+              </div>
+              <div class="menu-4d2">
+                <a href="/logout">Logout</a>
+                <img class="logouticon" src="img2/switch.png" alt="" />
+              </div>
+              <div class="menu-4d3">
+                <p style="color: white">CONTACT US</p>
+              </div>
+              <div class="menu-4d4">
+                <a id="sica" href=""
+                  ><img class="sic" src="img2/instagram.png" alt=""
+                /></a>
+                <a id="sica" href=""
+                  ><img class="sic" src="img2/twitter.png" alt=""
+                /></a>
+                <a id="sica" href=""
+                  ><img class="sic" src="img2/telegram.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="bodygrid">
+      <% newNft.forEach(function(nft){ %>
+      <div class="nft">
+        <img
+          class="nftimg"
+          name="<%= nft.nftName %>"
+          src="nfts/<%= nft.nftImg %>"
+          alt="<%= nft.nftPrice %>"
+        />
+        <div class="nfttxt">
+          <div class="nfttxti">
+            <h4 class="nfth4"><%= nft.nftName %></h4>
+            <h4 class="nfth4"> owner:<%= nft.nftOwner %></h4>
+            <h3 class="nfth2">
+              $ <span class="nftspn1"><%= nft.nftPrice %></span> <br>
+              <span style="color: <%= nft.nftColor %>" class="nftspn2"
+                ><%= nft.nftPer %>%</span
+              >
+            </h3>
+          </h4>
+        </div>
+          
+          <button class="nftbtn">
+            <img class="nftic" src="img2/buycryptoicon.png" alt="" />
+          </button>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <div class="buy">
+      <div class="buy-overlay">
+        <img class="cancelbtn" src="img2/cancelbtn.png" alt="" />
+
+        <form style="padding: 0 20px" action="/marketplace" method="post">
+          <img class="overlayimg" src="" alt="" />
+          <select class="nftname" name="buynftname" id="">
+            <option id="nftn" value=""></option>
+          </select>
+          <select class="nftprice" name="buynftprice" id="">
+            <option id="nftp" value=""></option>
+          </select>
+          <input type="hidden" name="buyerEmail" value="<%= buyerEmail %>">
+
+          <button class="buy-btn" type="submit">BUY</button>
+
+          <h3 style="margin: 30px 0 0 0; color: gray; font-size: small">
+            Balance: $<span> <%= balance %></span>
+          </h3>
+        </form>
+      </div>
+    </div>
+
+    <div style="display: <%=sstyle%>" class="succalrt" role="alert">
+      <img class="alrtic" src="img2/checked.png" alt="" />
+      <p class="alrtp">Your request has been recieved and would be reviewed shortly</p>
+      <button class="btnalrtcl">
+        <img class="alrtcl" src="img2/close.png" alt="" />
+      </button>
+    </div>
+
+    <div style="display: <%=fstyle%>" class="failalrt" role="alert">
+      <img class="alrtic" src="img2/warning.png" alt="" />
+      <p class="alrtp">
+        Sorry there was a problem with your request please review it and try
+        again
+      </p>
+      <button class="btnalrtcl">
+        <img class="alrtcl" src="img2/close.png" alt="" />
+      </button>
+    </div>
+
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <footer>
+      <p style="color: white">Tungsten Exchange &copy; 2020</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/marketplace.js"></script>
+  </body>
+</html>

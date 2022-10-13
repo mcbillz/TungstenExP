@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUNGSTEN Exchange</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/dashboardstyle.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="succalrt" role="alert">
+      <img class="alrtic" src="img2/checked.png" alt="" />
+      <p>Your request has been recieved and would be reviewed shortly</p>
+      <button class="btnalrtcl">
+        <img class="alrtcl" src="img2/close.png" alt="" />
+      </button>
+    </div>
+
+    <div class="bodygrid">
+      <nav class="nav">
+        <div class="container">
+          <img class="navlogo" src="img2/TUNGSTEN 11.png" alt="" />
+          <div class="nav-menu">
+            <a href="" class="is-active">
+              <img class="navmenuic" src="img2/dashboardicon.png" alt="" />
+              DASHBOARD</a
+            >
+            <a href="/marketplace">
+              <img class="navmenuic" src="img2/nfticonpng.png" alt="" />NFT
+              MARKET</a
+            >
+            <div class="dropdown">
+              <button class="fdbtn">
+                <img
+                  class="navmenuic"
+                  src="img2/fundingicon.png"
+                  alt=""
+                />FUNDING
+              </button>
+              <div class="sub-menu-1">
+                <ul>
+                  <li style="margin: 0px 0">
+                    <a href="/buyCrypto">Deposit</a>
+                  </li>
+                  <li style="margin: 15px 0">
+                    <a href="/withhdrawal">Withdrawal</a>
+                  </li>
+                  <li style="margin: 15px 0">
+                    <a href="/transfer">Transfer</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="/buyCrypto"
+              ><img class="navmenuic" src="img2/buycryptoicon.png" alt="" />BUY
+              CRYPTO</a
+            >
+            <div class="dropdown">
+              <button id="nvic" style="padding: 8px 5px" href="">
+                <img class="reward-icon" src="img2/reward icon.png" alt="" />
+              </button>
+              <div class="sub-menu-2">
+                <ul>
+                  <li style="margin: 0px 0"><p><%= reward1 %></p></li>
+                  <li style="margin: 15px 0"><p><%= reward2 %></p></li>
+                  <li style="margin: 15px 0"><p><%= reward3 %></p></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button id="nvic" style="padding: 8px 5px" href="">
+                <img class="bell-icon" src="img2/bell icon.png" alt="" />
+              </button>
+              <div class="sub-menu-3">
+                <ul>
+                  <li style="margin: 0px 0">
+                    <p><%= notification1 %></p>
+                  </li>
+                  <li style="margin: 15px 0">
+                    <p><%= notification2 %></p>
+                  </li>
+                  <li style="margin: 15px 0">
+                    <p><%= notification3 %></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button
+                id="nvic"
+                style="
+                  margin-right: 10px;
+                  padding: 8px 20px;
+                  border-style: solid;
+                  border-radius: 30px;
+                  border-color: gray;
+                "
+                href=""
+              >
+                <img class="user-icon" src="img2/user icon.png" alt="" />
+              </button>
+              <div class="sub-menu-4">
+                <div class="menu-4d1">
+                  <a href="#google_translate_element">Language</a>
+                  <img class="transicon" src="img2/translation.png" alt="" />
+                </div>
+                <div class="menu-4d2">
+                  <a href="/logout">Logout</a>
+                  <img class="logouticon" src="img2/switch.png" alt="" />
+                </div>
+                <div class="menu-4d3">
+                  <p style="color: white">CONTACT US</p>
+                </div>
+                <div class="menu-4d4">
+                  <a id="sica" href=""
+                    ><img class="sic" src="img2/instagram.png" alt=""
+                  /></a>
+                  <a id="sica" href=""
+                    ><img class="sic" src="img2/twitter.png" alt=""
+                  /></a>
+                  <a id="sica" href=""
+                    ><img class="sic" src="img2/telegram.png" alt=""
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+      <div class="section1">
+        <div class="subnav">
+          <div class="subnava1">
+            <button class="subnava" style="padding: 8px 5px" href="">
+              <img class="user-icon" src="img2/user icon.png" alt="" />
+            </button>
+            <div class="sub-menu-4">
+              <div class="menu-4d1">
+                <a href="#google_translate_element">Language</a>
+                <img class="transicon" src="img2/translation.png" alt="" />
+              </div>
+              <div class="menu-4d2">
+                <a href="/login-up">Logout</a>
+                <img class="logouticon" src="img2/switch.png" alt="" />
+              </div>
+              <div class="menu-4d3">
+                <p style="color: white">CONTACT US</p>
+              </div>
+              <div class="menu-4d4">
+                <a id="sica" href=""
+                  ><img class="sic" src="img2/instagram.png" alt=""
+                /></a>
+                <a id="sica" href=""
+                  ><img class="sic" src="img2/twitter.png" alt=""
+                /></a>
+                <a id="sica" href=""
+                  ><img class="sic" src="img2/telegram.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="subnava2">
+            <button class="subnava" style="padding: 8px 20px" href="">
+              <img class="reward-icon" src="img2/reward icon.png" alt="" />
+            </button>
+            <div class="sub-menu-2">
+              <ul>
+                <li style="margin: 0px 0"><p><%= reward1 %></p></li>
+                <li style="margin: 15px 0"><p><%= reward2 %></p></li>
+                <li style="margin: 15px 0"><p><%= reward3 %></p></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="subnava3">
+            <button class="subnava" style="padding: 8px 5px" href="">
+              <img class="bell-icon" src="img2/bell icon.png" alt="" />
+            </button>
+            <div class="sub-menu-3">
+              <ul>
+                <li style="margin: 0px 0">
+                  <p><%= notification1 %></p>
+                </li>
+                <li style="margin: 15px 0">
+                  <p><%= notification2 %></p>
+                </li>
+                <li style="margin: 15px 0">
+                  <p><%= notification3 %></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec1-parta">
+          <img class="hello-icon" src="img2/hello.png" alt="" />
+          <h1 class="user-name"><%= usname %></h1>
+        </div>
+        <div class="sec1-partb">
+          <h2 class="sec1h2">ACCOUNT OVERVIEW</h2>
+          <div>
+            <div class="sec1subdiv2">
+              <div class="s1ssd">
+                <img class="sec1subicons" src="img2/totalicon.png" alt="" />
+                <h3 class="sec1subH3">TOTAL</h3>
+              </div>
+              <div class="cd">
+                <h4 class="h4s11">$</h4>
+                <h4 id="h4s1" class="h4s1 rootbalance"><br /><%= balance %></h4>
+              </div>
+            </div>
+            <div class="sec1subdiv">
+              <div class="s1ssd">
+                <img class="sec1subicons" src="img2/stakedicon.png" alt="" />
+                <h3 class="sec1subH3">STAKED</h3>
+              </div>
+              <div>
+                <h4 class="h4s1">
+                  <%= amttoken %> <br />
+                  <%= stakeplan%>
+                </h4>
+              </div>
+              <a href="/stake"><button id="stakedbtn">STAKE MORE</button></a>
+            </div>
+            <div class="sec1subdiv3">
+              <div class="s1ssd">
+                <img
+                  class="sec1subicons"
+                  src="img2/accumultedicon.png"
+                  alt=""
+                />
+                <h3 class="sec1subH3">%</h3>
+              </div>
+              <div class="cd">
+                <h4 class="h4s11">$</h4>
+                <h4 class="h4s1" id="h4s2"><br /><%= interest %></h4>
+              </div>
+            </div>
+          </div>
+          <h3 class="h3s1">NFT HOLDINGS</h3>
+          <div class="sec1slide" id="sec1slide">
+            <img
+              src="nfts/<%= nft1src %>"
+              alt="nfts/emptyimg.png"
+              name="<%= nft1name %>"
+              class="nhimg"
+              id="img1"
+            />
+
+            <img
+              src="nfts/<%= nft2src %>"
+              alt="nfts/emptyimg.png"
+              name="<%= nft2name %>"
+              class="nhimg"
+              id="img2"
+            />
+
+            <img
+              src="nfts/<%= nft3src %>"
+              alt="nfts/emptyimg.png"
+              name="<%= nft3name %>"
+              class="nhimg"
+              id="img3"
+            />
+
+            <img
+              src="nfts/<%= nft4src %>"
+              alt="nfts/emptyimg.png"
+              name="<%= nft4name %>"
+              class="nhimg"
+              id="img4"
+            />
+
+            <img
+              src="nfts/<%= nft5src %>"
+              alt="nfts/emptyimg.png"
+              name="<%= nft5name %>"
+              class="nhimg"
+              id="img5"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="sell">
+        <div class="sell-overlay">
+          <img class="cancelbtn" src="img2/cancelbtn.png" alt="" />
+
+          <form style="padding: 0 20px" action="/dashboard" method="post">
+            <img class="overlayimg" src="" alt="" />
+            <select class="nftname" name="nftname" id="">
+              <option id="nftn" value=""></option>
+            </select>
+            <select class="sell-select" name="selltype" id="">
+              <option selected value="market">Market Price</option>
+              <option value="limit">Limit Price</option>
+            </select>
+            <br />
+            <div class="rar">
+              <input class="sell-amount" name="sellamount" type="" />
+              <span class="sell-label">Amount</span>
+            </div>
+            <br />
+            <input
+              type="hidden"
+              name="sellerEmail"
+              value="<%= sellerEmail %>"
+            />
+            <button class="sell-btn" type="submit">SELL</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="section2a">
+        <div class="saleschartdiv">
+          <img class="saleschart" src="img2/salesreport.png" alt="" />
+        </div>
+        <div class="sec2bbdiv">
+          <div class="salesdiv">
+            <img class="srimg" src="img2/charticon.png" alt="" />
+            <h3 class="h3sec2a">
+              Sales <br />
+              873K
+            </h3>
+          </div>
+          <div class="activeudiv">
+            <img class="srimg" src="img2/actusericon.png" alt="" />
+            <h3 class="h3sec2a">
+              Active Users <br />
+              92K
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="section2b">
+        <h2 class="sec2bh2">TOP NFTs</h2>
+        <div class="sec2bp">
+          <p class="p21">NFT</p>
+          <p class="p22">TRADED VOL</p>
+        </div>
+        <div class="sec2bd">
+          <img class="sec2bdimg" src="img2/main bored ape.jpg" alt="" />
+          <h3 class="sec2bdh31">Bored ape</h3>
+          <h3 class="sec2bdh32" style="margin-left: 36%">$3.2M</h3>
+        </div>
+        <div class="sec2bd">
+          <img class="sec2bdimg" src="img2/main crypto kitties.png" alt="" />
+          <h3 class="sec2bdh31">Crypto kitties</h3>
+          <h3 class="sec2bdh32">$2.8M</h3>
+        </div>
+        <div class="sec2bd">
+          <img class="sec2bdimg" src="img2/main crypto punks.jpg" alt="" />
+          <h3 class="sec2bdh31">Crypto punks</h3>
+          <h3 class="sec2bdh32">$1.2M</h3>
+        </div>
+      </div>
+      <div class="section3a">
+        <h2 class="sec3ah2">TOP USERS</h2>
+        <div class="sec3ap">
+          <p class="p31">USER</p>
+          <p class="p32">TRADED VOL</p>
+        </div>
+        <div class="sec3ad">
+          <img class="sec3adimg" src="img2/user2.jpg" alt="" />
+          <h3 class="sec3adh31">Ismail</h3>
+          <h3 style="margin-left: 44%" class="sec3adh32">$252K</h3>
+        </div>
+        <div class="sec3ad">
+          <img class="sec3adimg" src="img2/user1.jpg" alt="" />
+          <h3 class="sec3adh31">Raja 001</h3>
+          <h3 style="margin-left: 40%" class="sec3adh32">$205K</h3>
+        </div>
+        <div class="sec3ad">
+          <img class="sec3adimg" src="img2/user3.jpg" alt="" />
+          <h3 class="sec3adh31">Lucas</h3>
+          <h3 style="margin-left: 45%" class="sec3adh32">$196K</h3>
+        </div>
+        <div class="sec3ad">
+          <img class="sec3adimg" src="img2/user4.jpg"" alt="" />
+          <h3 class="sec3adh31">Sanchez</h3>
+          <h3 style="margin-left: 41%" class="sec3adh32">$151K</h3>
+        </div>
+      </div>
+      <div class="section3b">
+        <h2 class="sec3bh2">MARKET</h2>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://www.tradingview.com/markets/"
+              rel="noopener"
+              target="_blank"
+              ><span class="blue-text">Financial Markets</span></a
+            >
+            by TradingView
+          </div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
+            async
+          >
+              {
+              "colorTheme": "dark",
+              "dateRange": "12M",
+              "showChart": true,
+              "locale": "en",
+              "largeChartUrl": "",
+              "isTransparent": false,
+              "showSymbolLogo": true,
+              "showFloatingTooltip": false,
+              "width": "300",
+              "height": "660",
+              "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+              "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+              "gridLineColor": "rgba(240, 243, 250, 0)",
+              "scaleFontColor": "rgba(106, 109, 120, 1)",
+              "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+              "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+              "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+              "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+              "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+              "tabs": [
+                {
+                  "title": "Indices",
+                  "symbols": [
+                    {
+                      "s": "FOREXCOM:SPXUSD",
+                      "d": "S&P 500"
+                    },
+                    {
+                      "s": "BINANCE:BTCUSDT",
+                      "d": "BTC"
+                    },
+                    {
+                      "s": "BINANCE:ETHUSDT",
+                      "d": "ETH"
+                    },
+                    {
+                      "s": "BINANCE:BNBUSDT",
+                      "d": "BNB"
+                    },
+                    {
+                      "s": "BINANCE:DOGEUSDT",
+                      "d": "DOGE"
+                    },
+                    {
+                      "s": "BINANCE:SOLUSDT",
+                      "d": "SOL"
+                    },
+                    {
+                      "s": "KUCOIN:SHIBUSDT",
+                      "d": "SHIBA"
+                    }
+                  ],
+                  "originalTitle": "Indices"
+                },
+                {
+                  "title": "Futures",
+                  "symbols": [
+                    {
+                      "s": "CME_MINI:ES1!",
+                      "d": "S&P 500"
+                    },
+                    {
+                      "s": "CME:6E1!",
+                      "d": "Euro"
+                    },
+                    {
+                      "s": "COMEX:GC1!",
+                      "d": "Gold"
+                    },
+                    {
+                      "s": "NYMEX:CL1!",
+                      "d": "Crude Oil"
+                    },
+                    {
+                      "s": "NYMEX:NG1!",
+                      "d": "Natural Gas"
+                    },
+                    {
+                      "s": "CBOT:ZC1!",
+                      "d": "Corn"
+                    }
+                  ],
+                  "originalTitle": "Futures"
+                },
+                {
+                  "title": "Bonds",
+                  "symbols": [
+                    {
+                      "s": "CME:GE1!",
+                      "d": "Eurodollar"
+                    },
+                    {
+                      "s": "CBOT:ZB1!",
+                      "d": "T-Bond"
+                    },
+                    {
+                      "s": "CBOT:UB1!",
+                      "d": "Ultra T-Bond"
+                    },
+                    {
+                      "s": "EUREX:FGBL1!",
+                      "d": "Euro Bund"
+                    },
+                    {
+                      "s": "EUREX:FBTP1!",
+                      "d": "Euro BTP"
+                    },
+                    {
+                      "s": "EUREX:FGBM1!",
+                      "d": "Euro BOBL"
+                    }
+                  ],
+                  "originalTitle": "Bonds"
+                },
+                {
+                  "title": "Forex",
+                  "symbols": [
+                    {
+                      "s": "FX:EURUSD",
+                      "d": "EUR/USD"
+                    },
+                    {
+                      "s": "FX:GBPUSD",
+                      "d": "GBP/USD"
+                    },
+                    {
+                      "s": "FX:USDJPY",
+                      "d": "USD/JPY"
+                    },
+                    {
+                      "s": "FX:USDCHF",
+                      "d": "USD/CHF"
+                    },
+                    {
+                      "s": "FX:AUDUSD",
+                      "d": "AUD/USD"
+                    },
+                    {
+                      "s": "FX:USDCAD",
+                      "d": "USD/CAD"
+                    }
+                  ],
+                  "originalTitle": "Forex"
+                }
+              ]
+            }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+      </div>
+      <div class="section4">
+        <div class="transhisD">
+          <h2 class="sec4h2">TRANSACTION HISTORY</h2>
+          <div class="trasD">
+            <img
+              src="img2/<%= imgtrans1 %>.png"
+              alt="nfts/emptyimg.png"
+              class="transimg"
+            />
+            <h4 class="transh4bw"><%= amttrans1 %></h4>
+          </div>
+          <div class="trasD">
+            <img
+              src="img2/<%= imgtrans2 %>.png"
+              alt="nfts/emptyimg.png"
+              class="transimg"
+            />
+            <h4 class="transh4bw"><%= amttrans2 %></h4>
+          </div>
+          <div class="trasD">
+            <img
+              src="img2/<%= imgtrans3 %>.png"
+              alt="nfts/emptyimg.png"
+              class="transimg"
+            />
+            <h4 class="transh4bw"><%= amttrans3 %></h4>
+          </div>
+          <div class="trasD">
+            <img
+              src="img2/<%= imgtrans4 %>.png"
+              alt="nfts/emptyimg.png"
+              class="transimg"
+            />
+            <h4 class="transh4bw"><%= amttrans4 %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- news div -->
+    <div class="newsDiv">
+      <script
+        src="https://cointelegraph.com/news-widget"
+        data-ct-widget-limit="20"
+        data-ct-widget-theme="dark"
+        data-ct-widget-size="tiny"
+        data-ct-widget-images="true"
+        data-ct-widget-language="en"
+      ></script>
+    </div>
+
+    <!-- translator -->
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <footer>
+      <p style="color: white">Tungsten Exchange &copy; 2020</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/dashboard.js"></script>
+  </body>
+</html>
