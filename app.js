@@ -7,6 +7,7 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const nodemailer = require("nodemailer");
 
 const app = express();
 
@@ -285,6 +286,83 @@ app.post("/sign-up", function (req, res) {
         res.redirect("/sign-up");
       } else {
         passport.authenticate("local")(req, res, function () {
+          const transporter = nodemailer.createTransport({
+            host: "smtp.titan.email",
+            port: 465,
+            secure: true,
+            auth: {
+              user: process.env.MY_EMAIL,
+              pass: process.env.MY_PASSWORD,
+            },
+            tls: {
+              rejectUnauthorized: false,
+            },
+          });
+
+          const options = {
+            from: '"Tungsten Exchange" <info@tungstenexchange.net>',
+            to: req.user.username,
+            subject: "WELCOME TO TUNGSTEN EXCHANGE",
+            html: ` <div>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:header"
+        alt=""
+      />
+      <p
+        style="
+          margin: 0;
+          padding: 30px 0 100px;
+          background-color: #faf7f9;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Dear ${req.user.name}, <br /><br />
+
+        I’m Veronica, the Marketing Head of Tungsten Exchange and I’d like to 
+        personally thank you for signing up to our service.<br /><br />
+
+        I’d love to hear what you think of  services and if there is anything we can 
+        improve. If you have any questions, please message support on the 
+        website <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net"
+          >Support</a
+        > <br /><br />
+
+        Thank you for using Tungstenexchange.
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net/login-up"
+          >Login</a
+        >
+      </p>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:footer"
+        alt=""
+      />
+    </div>`,
+            attachments: [
+              {
+                filename: "tungstenmesH.png",
+                path: __dirname + "/tungstenmesH.png",
+                cid: "header",
+              },
+              {
+                filename: "tungstenmesF.png",
+                path: __dirname + "/tungstenmesF.png",
+                cid: "footer",
+              },
+            ],
+          };
+          transporter.sendMail(options, function (err, info) {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log("sent" + info);
+            }
+          });
           res.redirect("/dashboard");
         });
       }
@@ -307,6 +385,78 @@ app.post("/login-up", function (req, res) {
       console.log(err);
     } else {
       passport.authenticate("local")(req, res, function () {
+        const transporter = nodemailer.createTransport({
+          host: "smtp.titan.email",
+          port: 465,
+          secure: true,
+          auth: {
+            user: process.env.MY_EMAIL,
+            pass: process.env.MY_PASSWORD,
+          },
+          tls: {
+            rejectUnauthorized: false,
+          },
+        });
+
+        const options = {
+          from: '"Tungsten Exchange" <info@tungstenexchange.net>',
+          to: req.user.username,
+          subject: "NEW LOGIN ALERT",
+          html: ` <div>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:header"
+        alt=""
+      />
+      <p
+        style="
+          margin: 0;
+          padding: 30px 0 100px;
+          background-color: #faf7f9;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Dear ${req.user.name}, <br /><br />
+        There was a new login on your account with Tungstenexchange made at
+        ${new Date(Date.now())}, if this wasn't you reach out to
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net"
+          >Support</a
+        >, else you can ignore this message. <br /><br />
+        Thank you for using Tungstenexchange.
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net/login-up"
+          >Login</a
+        >
+      </p>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:footer"
+        alt=""
+      />
+    </div>`,
+          attachments: [
+            {
+              filename: "tungstenmesH.png",
+              path: __dirname + "/tungstenmesH.png",
+              cid: "header",
+            },
+            {
+              filename: "tungstenmesF.png",
+              path: __dirname + "/tungstenmesF.png",
+              cid: "footer",
+            },
+          ],
+        };
+        transporter.sendMail(options, function (err, info) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("sent" + info);
+          }
+        });
         res.redirect("/dashboard");
       });
     }
@@ -384,6 +534,83 @@ app.post("/marketplace", function (req, res) {
       });
       buy1.save();
 
+      const transporter = nodemailer.createTransport({
+        host: "smtp.titan.email",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.MY_EMAIL,
+          pass: process.env.MY_PASSWORD,
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+      });
+
+      const options = {
+        from: '"Tungsten Exchange" <info@tungstenexchange.net>',
+        to: req.user.username,
+        subject: "NFT PURCHASE",
+        html: ` <div>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:header"
+        alt=""
+      />
+      <p
+        style="
+          margin: 0;
+          padding: 30px 0 100px;
+          background-color: #faf7f9;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Dear ${req.user.name}, <br /><br />
+        Your account with Tungstenexchange  just made a bid to purchase the ${
+          req.body.buynftname
+        } worth ${"$" + req.body.buynftprice} 
+        on ${new Date(Date.now())} and we would like to inform you 
+        that it is being reviewed and would be updated soon, we advise that you don't make any
+         additional bids till this is approved. if this wasn't you or you want to cancel your bid please reach out to
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net"
+          >Support</a
+        >, else you can ignore this message. <br /><br />
+        Thank you for using Tungstenexchange.
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net/login-up"
+          >Login</a
+        >
+      </p>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:footer"
+        alt=""
+      />
+    </div>`,
+        attachments: [
+          {
+            filename: "tungstenmesH.png",
+            path: __dirname + "/tungstenmesH.png",
+            cid: "header",
+          },
+          {
+            filename: "tungstenmesF.png",
+            path: __dirname + "/tungstenmesF.png",
+            cid: "footer",
+          },
+        ],
+      };
+      transporter.sendMail(options, function (err, info) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("sent" + info);
+        }
+      });
+
       res.redirect("/marketplace");
     }
   } else {
@@ -408,13 +635,93 @@ app.get("/marketplace", function (req, res) {
 
 // STAKE
 app.post("/stake", function (req, res) {
-  const stake1 = new Stake({
-    stakePlan: req.body.splan,
-    stakeAmount: req.body.stakeamount,
-    userEmail: req.body.userEmail,
-    date: new Date(Date.now()),
-  });
-  stake1.save();
+  if (req.isAuthenticated()) {
+    const stake1 = new Stake({
+      stakePlan: req.body.splan,
+      stakeAmount: req.body.stakeamount,
+      userEmail: req.body.userEmail,
+      date: new Date(Date.now()),
+    });
+    stake1.save();
+    const transporter = nodemailer.createTransport({
+      host: "smtp.titan.email",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.MY_EMAIL,
+        pass: process.env.MY_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
+
+    const options = {
+      from: '"Tungsten Exchange" <info@tungstenexchange.net>',
+      to: req.user.username,
+      subject: "STAKE REQUEST",
+      html: ` <div>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:header"
+        alt=""
+      />
+      <p
+        style="
+          margin: 0;
+          padding: 30px 0 100px;
+          background-color: #faf7f9;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Dear ${req.user.name}, <br /><br />
+        Your account with Tungstenexchange  placed a stake request of ${
+          "$" + req.body.stakeamount
+        } 
+        on ${new Date(Date.now())} and we would like to inform you 
+        that it is being reviewed and would be updated soon. if this wasn't you reach out to
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net"
+          >Support</a
+        >, else you can ignore this message. <br /><br />
+        Thank you for using Tungstenexchange.
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net/login-up"
+          >Login</a
+        >
+      </p>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:footer"
+        alt=""
+      />
+    </div>`,
+      attachments: [
+        {
+          filename: "tungstenmesH.png",
+          path: __dirname + "/tungstenmesH.png",
+          cid: "header",
+        },
+        {
+          filename: "tungstenmesF.png",
+          path: __dirname + "/tungstenmesF.png",
+          cid: "footer",
+        },
+      ],
+    };
+    transporter.sendMail(options, function (err, info) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("sent" + info);
+      }
+    });
+    res.redirect("/stake");
+  } else {
+    res.redirect("/login-up");
+  }
 });
 app.get("/stake", function (req, res) {
   if (req.isAuthenticated()) {
@@ -444,6 +751,85 @@ app.post("/withhdrawal", function (req, res) {
         date: new Date(Date.now()),
       });
       withdrawal1.save();
+
+      const transporter = nodemailer.createTransport({
+        host: "smtp.titan.email",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.MY_EMAIL,
+          pass: process.env.MY_PASSWORD,
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+      });
+
+      const options = {
+        from: '"Tungsten Exchange" <info@tungstenexchange.net>',
+        to: req.user.username,
+        subject: "WITHDRAWAL ALERT",
+        html: ` <div>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:header"
+        alt=""
+      />
+      <p
+        style="
+          margin: 0;
+          padding: 30px 0 100px;
+          background-color: #faf7f9;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Dear ${req.user.name}, <br /><br />
+        Your account with Tungstenexchange  placed a withdrawal of ${
+          "$" + req.body.withdrawalamount
+        } 
+        to the wallet address ${req.body.walletaddress} on ${new Date(
+          Date.now()
+        )} and we would like to inform you 
+        that the  funds have been sent out and should be in your wallet soon. if this wasn't you reach out to
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net"
+          >Support</a
+        >, else you can ignore this message. <br /><br />
+        Thank you for using Tungstenexchange.
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net/login-up"
+          >Login</a
+        >
+      </p>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:footer"
+        alt=""
+      />
+    </div>`,
+        attachments: [
+          {
+            filename: "tungstenmesH.png",
+            path: __dirname + "/tungstenmesH.png",
+            cid: "header",
+          },
+          {
+            filename: "tungstenmesF.png",
+            path: __dirname + "/tungstenmesF.png",
+            cid: "footer",
+          },
+        ],
+      };
+      transporter.sendMail(options, function (err, info) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("sent" + info);
+        }
+      });
+
       res.redirect("/withhdrawal");
     }
   } else {
@@ -474,12 +860,90 @@ app.post("/transfer", function (req, res) {
       succ();
       setTimeout(failrm, 2000);
       const transfer1 = new Transfer({
-        reciepientEmail: req.body.reciepientemail,
+        reciepientEmail: req.body.recipientemail,
         transferAmount: req.body.transferamount,
         userEmail: req.body.userEmail,
         date: new Date(Date.now()),
       });
       transfer1.save();
+      const transporter = nodemailer.createTransport({
+        host: "smtp.titan.email",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.MY_EMAIL,
+          pass: process.env.MY_PASSWORD,
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+      });
+
+      const options = {
+        from: '"Tungsten Exchange" <info@tungstenexchange.net>',
+        to: req.user.username,
+        subject: "TRANSFER ALERT",
+        html: ` <div>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:header"
+        alt=""
+      />
+      <p
+        style="
+          margin: 0;
+          padding: 30px 0 100px;
+          background-color: #faf7f9;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Dear ${req.user.name}, <br /><br />
+        Your account with Tungstenexchange  placed a transfer request of ${
+          "$" + req.body.transferamount
+        } 
+        to ${req.body.recipientemail} on ${new Date(
+          Date.now()
+        )} and we would like to inform you 
+        that it is being reviewed and would reach the reciepient soon. if this wasn't you reach out to
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net"
+          >Support</a
+        >, else you can ignore this message. <br /><br />
+        Thank you for using Tungstenexchange.
+        <a
+          style="text-decoration: none; color: #d10909"
+          href="https://tungstenexchange.net/login-up"
+          >Login</a
+        >
+      </p>
+      <img
+        style="margin: 0; width: 100%"
+        src="cid:footer"
+        alt=""
+      />
+    </div>`,
+        attachments: [
+          {
+            filename: "tungstenmesH.png",
+            path: __dirname + "/tungstenmesH.png",
+            cid: "header",
+          },
+          {
+            filename: "tungstenmesF.png",
+            path: __dirname + "/tungstenmesF.png",
+            cid: "footer",
+          },
+        ],
+      };
+      transporter.sendMail(options, function (err, info) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("sent" + info);
+        }
+      });
+
       res.redirect("/transfer");
     }
   } else {
@@ -525,10 +989,10 @@ app.get("/logout", function (req, res) {
 });
 
 app.get("/terms", function (request, response) {
-  response.sendFile(__dirname + "/terms.html");
+  response.render("terms");
 });
 app.get("/about-us", function (request, response) {
-  response.sendFile(__dirname + "/about-us.html");
+  response.render("about-us");
 });
 
 // listen port
