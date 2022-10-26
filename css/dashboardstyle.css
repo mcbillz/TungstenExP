@@ -460,13 +460,14 @@ button {
   border-color: #2b0723;
   border-width: medium;
   border-radius: 50px;
-  width: 90%;
+  width: auto;
   height: 300px;
   margin: 20px 5%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow-x: scroll;
+  padding-left: 10%;
 }
 .nhimg {
   width: 20%;

@@ -21,3 +21,7 @@ $(".alrtcl").on("click", function () {
 $(".cancelbtn").on("click", function () {
   $(".sell").css("display", "none");
 });
+
+$(".btnalrtcl").on("click", function () {
+  $(".succalrt").css("display", "none");
+});
